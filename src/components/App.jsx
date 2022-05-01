@@ -1,6 +1,6 @@
 import React from "react";
 import BinaryInput from "./BinaryInput";
-import {Encoding, Empty, TickOne, TickZero, ConstOne, ConstZero} from "./Encoding";
+import { Encoding, Empty, TickOne, TickZero, ConstOne, ConstZero, BiphaseZero, TickBiphaseZero, TickBiphaseOne, BiphaseOne } from "./Encoding";
 
 export default class App extends React.Component {
   constructor(props) {
