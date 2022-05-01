@@ -1,0 +1,12 @@
+.box {
+  background: linear-gradient(#e664a5, #9198e5);
+  border-width: 0px;
+  width: 45px;
+  height: 45px;
+}
+
+.container {
+    margin-top: 80px;
+    display: grid;
+    place-items: center;
+}

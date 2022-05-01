@@ -1,24 +1,48 @@
 import React from "react";
 import BinaryInput from "./BinaryInput";
-import NRZ from "./Encodings/NRZ";
+import {Encoding, Empty, TickOne, TickZero, ConstOne, ConstZero} from "./Encoding";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: ""
+      value: "",
+      nrzl: Array(16).fill(<Empty />),
+      nrzm: Array(16).fill(<Empty />),
+      nrzs: Array(16).fill(<Empty />),
     }
   }
 
   render() {
-    return (<div><BinaryInput value={this.state.value} onChange={this.onChange.bind(this)} />
-      <NRZ /></div>);
+    return (
+      <div style={{ display: "grid", placeItems: "center" }}>
+        <div className="wrapper">
+          <div style={{
+            gridColumn: 2,
+            gridRow: 1
+          }}>
+            <BinaryInput value={this.state.value} onChange={this.onChange.bind(this)} />
+          </div>
+          <div style={{
+            textAlign: "right", color: "#f8f8f2", lineHeight: "65px", fontSize: 30,
+            gridColumn: 1,
+            gridRow: 2
+          }}>
+            Data/NRZ-L:
+          </div>
+          <div style={{
+            border: "1px solid white",
+            gridColumn: 2,
+            gridRow: 2
+          }}>
+            <Empty />
+          </div>
+        </div>
+      </div>);
   }
 
   onChange(value) {
-    const re = /^[01]{0,16}$/g
-    if (re.test(value)) {
-      this.setState({ value: value });
-    }
+    this.setState({ value: value });
+    this.encodeNRZL(value)
   }
 }

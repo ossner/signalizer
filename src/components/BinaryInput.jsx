@@ -1,4 +1,6 @@
 import React from "react";
+import RICIBs from 'react-individual-character-input-boxes';
+import "./BinaryInput.css"
 
 export default class BinaryInput extends React.Component {
     constructor(props) {
@@ -10,12 +12,30 @@ export default class BinaryInput extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
     }
-
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.props.value} onSubmit={this.handleSubmit} onChange={(e) => this.props.onChange(e.target.value)}/>
-            </form>
+            <div className="container">
+                <div>
+                    <RICIBs amount={16} handleOutputString={this.props.onChange} inputRegExp={/^[01]$/} autoFocus={true} inputProps={[
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                        { className: "box" },
+                    ]} />
+                </div>
+            </div>
         );
-    } 
+    }
 }
