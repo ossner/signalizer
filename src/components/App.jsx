@@ -43,6 +43,5 @@ export default class App extends React.Component {
 
   onChange(value) {
     this.setState({ value: value });
-    this.encodeNRZL(value)
   }
 }
