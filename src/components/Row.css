@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  grid-template-columns: repeat(2, 29.3px);
+  grid-template-rows: repeat(2, 29.3px);
+  background-color: #6272a4;
+}
+
+.wrapper {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 200px 944px;
+  grid-auto-rows: minmax(58.6px, auto);
+}
